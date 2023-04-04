@@ -28,21 +28,21 @@
     margin-top: 3rem;
     outline: 1px solid white;
     font-family: 'Roboto Condensed', sans-serif;
-}
+    
+    span:nth-of-type(1) span {
+        font-size: 3rem;
+        color: var(--green);
+    }
 
-.name span:nth-of-type(1) span {
-    font-size: 3rem;
-    color: var(--green);
-}
-
-.name span:nth-of-type(2) {
-    display: inline-block;
-    color: var(--green);
-    font-size: 4rem;
-    font-weight: bold;
-    padding: 10px 0;
-    letter-spacing: 8px;
-    text-shadow: 10px 8px 10px var(--black);
+    span:nth-of-type(2) {
+        display: inline-block;
+        color: var(--green);
+        font-size: 4rem;
+        font-weight: bold;
+        padding: 10px 0;
+        letter-spacing: 8px;
+        text-shadow: 10px 8px 10px var(--black);
+    }
 }
 
 .profile {
@@ -52,55 +52,56 @@
     margin: 0 auto;
     position: relative;
     clip-path: inset(0% round 0% 0% 25%);
-}
 
-.profile .profile-bg {
-    height: 75%;
-    width: 100%;
-    bottom: 0%;
-    position: absolute;
-    background-color: var(--green);
-    clip-path: inset(0% round 50% 0% 0%);
-}
+    .profile-bg {
+        height: 75%;
+        width: 100%;
+        bottom: 0%;
+        position: absolute;
+        background-color: var(--green);
+        clip-path: inset(0% round 50% 0% 0%);
+    }
 
-.profile img {
-    width: 100%;
-    height: 100%;
-    position: absolute;
+    img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
 }
-
 /* pc */
 :host.pc {
     padding: 4rem 2rem 10rem;
     clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0% 90%);
 }
 
-:host.pc .container {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 2fr;
-}
+:host.pc {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 2fr;
+    }
 
-:host.pc .title {
-    grid-column: 1/2;
-    padding: 0%;
-    margin: auto;
-    font-size: 5rem;
-    font-style: normal;
-    text-decoration: none;
-}
+    .title {
+        grid-column: 1/2;
+        padding: 0%;
+        margin: auto;
+        font-size: 5rem;
+        font-style: normal;
+        text-decoration: none;
+    }
 
-:host.pc .profile {
-    grid-row: 1/3;
-    grid-column: 2/3;
-    width: 600px;
-    height: 600px;
-}
+    .profile {
+        grid-row: 1/3;
+        grid-column: 2/3;
+        width: 600px;
+        height: 600px;
+    }
 
-:host.pc .name {
-    grid-row: 2/3;
-    width: 600px;
-    margin: auto;
-    margin-left: 0;
-    margin-bottom: 0;
-    height: max-content;
+    .name {
+        grid-row: 2/3;
+        width: 600px;
+        margin: auto;
+        margin-left: 0;
+        margin-bottom: 0;
+        height: max-content;
+    }
 }
