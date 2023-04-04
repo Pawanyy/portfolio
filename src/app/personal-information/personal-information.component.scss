@@ -1,0 +1,40 @@
+:host {
+    display: block;
+    color: white;
+    padding: 3rem 2rem;
+}
+
+.container {
+    gap: 2rem;
+    display: grid;
+}
+
+table {
+    font-size: 1.3rem;
+    outline: 1px solid white;
+    
+    tr {
+        height: 40px;
+    }
+
+    tr td {
+        padding-left: 0.5rem;
+    }
+
+    tr td:nth-child(even){
+        color: var(--green);
+    }
+}
+
+section {
+    p {
+        font-size: 1.2rem;
+        text-align: justify;
+    }
+
+    p:not(:first-child) {
+        margin-top: 1rem;
+    }
+}
+
+/* PC */

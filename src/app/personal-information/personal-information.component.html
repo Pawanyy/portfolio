@@ -1,1 +1,17 @@
-<p>personal-information works!</p>
+<div class="container">
+    <h1 class="title">
+        <span>Personal Information</span>
+    </h1>
+
+    <table>
+        <tbody>
+            <tr *ngFor="let row of myData">
+                <td *ngFor="let item of row">{{ item }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <section>
+        <p *ngFor="let sentence of aboutMe">{{ sentence }}</p>
+    </section>
+</div>
