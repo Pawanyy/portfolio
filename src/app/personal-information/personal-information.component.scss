@@ -38,3 +38,21 @@ section {
 }
 
 /* PC */
+:host.pc {
+
+    margin-top: 3rem;
+
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    h1 {
+        grid-column: 1/3;
+    }
+
+    section, table {
+        width: 80%;
+        margin: auto;
+    }
+
+}
