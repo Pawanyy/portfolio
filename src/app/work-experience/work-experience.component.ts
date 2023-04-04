@@ -18,6 +18,6 @@ export class WorkExperienceComponent {
         'Developed an LMS website with features such as AWS integration for videos, social login, payment integration, and a referral system.'
       ],
       contact: ['Rahul Sachwani', '+91-7208344434']
-    }
+    },
   ]
 }
