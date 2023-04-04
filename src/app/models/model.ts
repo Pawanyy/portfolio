@@ -14,3 +14,8 @@ export interface WorkExperience {
     contact: string[];
 }
 
+export interface Skill {
+    name: string;
+    level: string;
+    rating: number;
+}
