@@ -54,6 +54,10 @@ ul {
             z-index: 1;
             background-color: var(--gray-light);
         }
+        
+        :last-child:after {
+            height: 100% !important;
+        }
     }
 
     
