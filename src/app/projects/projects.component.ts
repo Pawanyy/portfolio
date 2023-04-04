@@ -9,13 +9,39 @@ import { Project } from '../models/model';
 export class ProjectsComponent {
   projects: Project[] = [
     {
-      title: 'Prj 1',
-      technologies: 'C, C++, C#',
+      title: '2D Platformer Game Development',
+      technologies: 'C#, Unity, SQLite',
       description: [
-        'Lorem ipsum dolor sit amet consectetur, adipisicing elit.',
-        'Dignissimos quae nisi minus.',
-        'Suscipit ipsum sed excepturi, dolorum enim exercitationem minima expedita sunt ut facere tempore natus aliquam porro adipisci est!'
+        'Developed 2D Platformer Game in Unity.',
       ]
-    }
+    },
+    {
+      title: 'Cron Job Schedular',
+      technologies: 'Node js, Javascript',
+      description: [
+        'Developed a Cron Job Schedular Tool for Windows.',
+      ]
+    },
+    {
+      title: 'Tic-Tac-Toe PWA',
+      technologies: 'Angular',
+      description: [
+        'Developed 2D Platformer Game in Unity.',
+      ]
+    },
+    {
+      title: 'Tic-Tac-Toe',
+      technologies: 'C#, Unity',
+      description: [
+        'Developed Tic-Tac-Toe Game in Unity.',
+      ]
+    },
+    {
+      title: 'RealEstate Management System',
+      technologies: 'C#, ASP.NET, SQL Server',
+      description: [
+        'Developed RealEstate Website in ASP.NET.',
+      ]
+    },
   ];
 }
