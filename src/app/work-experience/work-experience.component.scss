@@ -1,0 +1,60 @@
+:host {
+    display: block;
+    color: white;
+    padding: 3rem 2rem;
+}
+
+ul { 
+    :has(ul) {
+        padding: 0%;
+        list-style: none;
+    }
+
+    li:has(ul) {
+        margin-top: 2rem;
+    }
+
+    li {
+        h2 {
+            color: var(--green);
+        }
+
+        h4 {
+            color: var(--gray-light);
+        }
+    }    
+}
+
+/* PC */
+:host.pc {
+    ul li:has(ul){
+        width: max-content;
+        position: relative;
+        margin-left: 5rem;
+
+        ::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--green);
+            left: -60px;
+            top: 5px;
+            z-index: 2;
+            border-radius: 50%;
+        }
+
+        ::after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 130%;
+            left: -50px;
+            top: 5%;
+            z-index: 1;
+            background-color: var(--gray-light);
+        }
+    }
+
+    
+}
