@@ -16,10 +16,6 @@ export class PersonalInformationComponent {
   ];
 
   aboutMe: string[] = [
-    "Hi, I am Software Developer with 2 Years of Experience.",
-    "Hi, I am Software Developer with 2 Years of Experience.",
-    "Hi, I am Software Developer with 2 Years of Experience.",
-    "Hi, I am Software Developer with 2 Years of Experience.",
-    "Hi, I am Software Developer with 2 Years of Experience.",
+    "Hi, I'm a passionate software developer with 2 years of experience in C#, Java, PHP, JavaScript, Dot Net, Laravel, MySQL, Unity & WinForms with SQL Server. I enjoy creating user-friendly software solutions that meet clients' needs. I'm always looking for new challenges and opportunities to enhance my abilities.",
   ]
 }
