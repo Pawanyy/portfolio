@@ -4,7 +4,12 @@
     padding: 3rem 2rem;
 }
 
-ul { 
+ul.exp_container{
+  margin-left: 0;
+  padding-left: 0;
+}
+
+ul {
     :has(ul) {
         padding: 0%;
         list-style: none;
@@ -22,7 +27,7 @@ ul {
         h4 {
             color: var(--gray-light);
         }
-    }    
+    }
 }
 
 /* PC */
@@ -54,11 +59,11 @@ ul {
             z-index: 1;
             background-color: var(--gray-light);
         }
-        
+
         :last-child:after {
             height: 100% !important;
         }
     }
 
-    
+
 }
