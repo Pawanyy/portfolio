@@ -39,6 +39,11 @@ export class SkillsComponent {
       rating: 65,
     },
     {
+      name: 'Unity',
+      level: 'Intermediate',
+      rating: 65,
+    },
+    {
       name: 'Github',
       level: 'Intermediate',
       rating: 65,
