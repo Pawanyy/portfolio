@@ -43,5 +43,12 @@ export class ProjectsComponent {
         'Developed RealEstate Website in ASP.NET.',
       ]
     },
+    {
+      title: 'Dating Website',
+      technologies: 'C#, ASP.NET Core API, SQL Server, Angular',
+      description: [
+        'Developing an Dating Website using ASP.NET Core and Angular.',
+      ]
+    },
   ];
 }
