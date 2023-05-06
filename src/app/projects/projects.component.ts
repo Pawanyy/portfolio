@@ -26,7 +26,7 @@ export class ProjectsComponent {
       title: 'Tic-Tac-Toe PWA',
       technologies: 'Angular',
       description: [
-        'Developed 2D Platformer Game in Unity.',
+        'Developed Tic-Tac-Toe Game in Angular.',
       ]
     },
     {
