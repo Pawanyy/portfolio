@@ -23,17 +23,24 @@ export class ProjectsComponent {
       ]
     },
     {
-      title: 'Tic-Tac-Toe PWA',
-      technologies: 'Angular',
-      description: [
-        'Developed Tic-Tac-Toe Game in Angular.',
-      ]
-    },
-    {
       title: 'Tic-Tac-Toe',
       technologies: 'C#, Unity',
       description: [
         'Developed Tic-Tac-Toe Game in Unity.',
+      ]
+    },
+    {
+      title: 'Gym Fitness Website',
+      technologies: 'PHP, MYSQL',
+      description: [
+        'Developed Gym Fitness Website.',
+      ]
+    },
+    {
+      title: 'NSS Website',
+      technologies: 'PHP, MYSQL',
+      description: [
+        'Developed NSS Website.',
       ]
     },
     {
@@ -48,6 +55,13 @@ export class ProjectsComponent {
       technologies: 'C#, ASP.NET Core API, SQL Server, Angular, Postman',
       description: [
         'Developing an Dating Website using ASP.NET Core and Angular.',
+      ]
+    },
+    {
+      title: 'Tic-Tac-Toe PWA',
+      technologies: 'Angular',
+      description: [
+        'Developed Tic-Tac-Toe Game in Angular.',
       ]
     },
     {
