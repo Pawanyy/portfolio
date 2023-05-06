@@ -45,7 +45,7 @@ export class ProjectsComponent {
     },
     {
       title: 'Dating Website',
-      technologies: 'C#, ASP.NET Core API, SQL Server, Angular',
+      technologies: 'C#, ASP.NET Core API, SQL Server, Angular, Postman',
       description: [
         'Developing an Dating Website using ASP.NET Core and Angular.',
       ]
