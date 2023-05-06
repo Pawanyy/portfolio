@@ -50,5 +50,12 @@ export class ProjectsComponent {
         'Developing an Dating Website using ASP.NET Core and Angular.',
       ]
     },
+    {
+      title: 'Event API',
+      technologies: 'C#, ASP.NET Core, SQLite, Postman',
+      description: [
+        'Developed Event Manage API in ASP.NET Core with JWT authentication.',
+      ]
+    },
   ];
 }
