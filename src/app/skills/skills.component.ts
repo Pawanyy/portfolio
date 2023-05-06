@@ -34,6 +34,11 @@ export class SkillsComponent {
       rating: 65,
     },
     {
+      name: 'ASP.Net, MVC',
+      level: 'Intermediate',
+      rating: 65,
+    },
+    {
       name: 'Winforms',
       level: 'Intermediate',
       rating: 65,
