@@ -11,6 +11,8 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { getImage } from 'astro:assets';
+import Steps2 from '~/components/widgets/Steps2.astro';
 
 const metadata = {
   title: 'Portfolio — Pawan Yadav',
@@ -29,24 +31,23 @@ const metadata = {
         href: 'https://github.com/Pawanyy?tab=repositories',
         target: '_blank',
         icon: 'tabler:device-imac',
-        iconDir: "left",
+        iconDir: 'left',
       },
-      { text: 'Contact Me', href: '#features', icon: 'tabler:phone',
-        iconDir: "left", },
+      { text: 'Contact Me', href: '#features', icon: 'tabler:phone', iconDir: 'left' },
     ]}
-    #image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }} 
+    image={{ src: '~/assets/images/hero.png', alt: 'Hero Image' }}
   >
-   <!-- Remove # above to Render Image -->
-    <Fragment slot="title" class:list={"text-align-left"}>
+    <!-- Remove # above to Render Image -->
+    <Fragment slot="title" class:list={'text-align-left'}>
       Hi, <small>I am</small>
-      <br>
+      <br />
       <span class="text-accent dark:text-white highlight"> 🚀 Pawan Yadav 🤖</span>
-      <br>
+      <br />
       <small class="font-normal"><small>Software Developer</small></small>
     </Fragment>
 
     <Fragment slot="subtitle">
-        <span class="font-semibold">“Turning Coffee into Code, one bug at a time!”</span>
+      <span class="font-semibold">“Turning Coffee into Code, one bug at a time!”</span>
     </Fragment>
   </Hero>
 
@@ -54,51 +55,48 @@ const metadata = {
 
   <Content
     id="about"
-    columns={3}
+    columns={2}
     items={[
       {
-        icon: 'tabler:brand-dribbble',
+        icon: 'tabler:brand-github',
         callToAction: {
           target: '_blank',
-          text: 'Dribbble',
+          text: 'Github',
           href: '#',
         },
       },
       {
-        icon: 'tabler:brand-behance',
+        icon: 'tabler:device-imac',
         callToAction: {
           target: '_blank',
-          text: 'Behance',
-          href: '#',
-        },
-      },
-      {
-        icon: 'tabler:brand-pinterest',
-        callToAction: {
-          target: '_blank',
-          text: 'Pinterest',
+          text: 'Projects',
           href: '#',
         },
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      src: 'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       alt: 'Colorful Image',
     }}
   >
     <Fragment slot="content">
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h3>
       <p>
-        Hey, it's Pawan! 🚀 A passionate coder with 2 years under my belt. I've mastered the code dance in C#, Java, PHP, JavaScript, and more. From Dot Net to Unity, I've tamed them all. I whip up user-friendly software that's both sleek and savvy. Always on the lookout for new challenges—let's craft something awesome together! 💻
+        Hey, it's Pawan! 🚀 A passionate coder with 2 years under my belt. I've mastered the code dance in C#, Java,
+        PHP, JavaScript, and more. From Dot Net to Unity, I've tamed them all. I whip up user-friendly software that's
+        both sleek and savvy. Always on the lookout for new challenges—let's craft something awesome together! 💻
       </p>
       <br />
       <p>
         <span class="text-lg text-muted mb-6 dark:text-slate-300">
-          <em><strong>Fun fact:</strong> I have a secret stash of coding jokes that I slip into my projects—consider them Easter eggs for your amusement!</em>
+          <em
+            ><strong>Fun fact:</strong> I have a secret stash of coding jokes that I slip into my projects—consider them
+            Easter eggs for your amusement!</em
+          >
         </span>
       </p>
       <br />
-      <p>If you're curious to dive deeper into my work, you can follow me:</p>
+      <p>If you're curious then dive deeper into my work:</p>
     </Fragment>
 
     <Fragment slot="bg">
@@ -106,15 +104,12 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Note Widget ******************* -->
-
-  <Note />
-
   <!-- Steps Widget ****************** -->
 
   <Steps
     id="resume"
     title="Work experience"
+    subtitle="My Professional Journey"
     items={[
       {
         title:
@@ -144,12 +139,16 @@ const metadata = {
     classes={{ container: 'max-w-3xl' }}
   />
 
+  <!-- Note Widget ******************* -->
+
+  <Note title="Metaphysical Debugging" text="Unraveling the Mysteries of Software Bugs" />
 
   <!-- Steps Widget ****************** -->
 
   <Steps
     id="resume"
     title="Education"
+    subtitle="Shaping Dreams into Degrees 🚀"
     items={[
       {
         title: `BSc IT <br /> <span class="font-normal">SDT Kalani College</span> <br /> <span class="text-sm font-normal">2017-2020</span>`,
@@ -363,67 +362,74 @@ const metadata = {
 
   <!-- Features2 Widget ************** -->
 
-  <!-- <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
+  <Features2
+    title="Skills"
+    subtitle="Debugging with Jedi-level patience, and making computers do the cha-cha-cha."
+    tagline="What i can do"
+    columns={4}
     items={[
       {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
+        title: 'HTML',
+        // description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
+        // icon: 'flat-color-icons:template',
       },
       {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
+        title: 'CSS',
       },
       {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
+        title: 'Javascript',
       },
       {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
+        title: 'Node Js',
       },
       {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
+        title: 'React.JS',
       },
       {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
+        title: 'C#',
       },
       {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
+        title: '.Net',
       },
       {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
+        title: 'ASP.Net, MVC',
       },
       {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
+        title: 'Winforms',
+      },
+      {
+        title: 'Unity',
+      },
+      {
+        title: 'Github',
+      },
+      {
+        title: 'Angular',
+      },
+      {
+        title: 'PHP',
+      },
+      {
+        title: 'Laravel',
+      },
+      {
+        title: 'MySQL',
+      },
+      {
+        title: 'SQL Server',
+      },
+      {
+        title: 'SQLite',
+      },
+      {
+        title: 'TypeScript',
       },
     ]}
-  > 
+  >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Features2> -->
+  </Features2>
 
   <!-- HighlightedPosts Widget ******* -->
 
@@ -509,4 +515,35 @@ const metadata = {
       waste more time! :P
     </Fragment>
   </CallToAction> -->
+
+  <!-- Steps2 Widget ****************** -->
+
+  <Steps2
+    title="Contact Me"
+    subtitle="Have questions? Feel free to contact me using the form below. I'm here to help!"
+    callToAction={{
+      text: 'Contact',
+      icon: 'tabler:phone',
+      iconDir: 'left',
+      href: '/contact',
+    }}
+    items={[
+      {
+        title: 'Email us',
+        description: 'yadavpawan69290@gmail.com',
+        href: '',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Call us',
+        description: '+91 7276616829',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Follow us',
+        description: '@example',
+        icon: 'tabler:brand-twitter',
+      },
+    ]}
+  />
 </Layout>

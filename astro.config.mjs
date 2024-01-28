@@ -40,7 +40,7 @@ export default defineConfig({
     icon({
       include: {
         tabler: ['*'],
-        mdi: ["*"],
+        mdi: ['*'],
         'flat-color-icons': [
           'template',
           'gallery',
