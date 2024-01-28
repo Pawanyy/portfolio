@@ -1,5 +1,5 @@
 site:
-  name: AstroWind
+  name: 'Pawan Yadav'
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: 'Portfolio - Pawan Yadav'
+    template: '%s — Portfolio - Pawan Yadav'
+  description: "\U0001F680 Professional Portfolios, web developer, pawan, pawanyyy, pawan yadav, pawan Blogs"
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: 'Portfolio - Pawan Yadav'
     images:
       - url: '~/assets/images/default.png'
         width: 1200
@@ -66,10 +66,10 @@ apps:
 analytics:
   vendors:
     googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
+      id: null # null or "G-XXXXXXXXXX"
 
 ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: 'light:only' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
 
   tokens:
     default:

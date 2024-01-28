@@ -13,7 +13,7 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: 'Portfolio — Pawan Yadav',
   ignoreTitleTemplate: true,
 };
 ---
@@ -25,36 +25,149 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/onwidget/astrowind',
+        text: 'View My Work',
+        href: 'https://github.com/Pawanyy?tab=repositories',
         target: '_blank',
-        icon: 'tabler:download',
+        icon: 'tabler:device-imac',
+        iconDir: "left",
       },
-      { text: 'Learn more', href: '#features' },
+      { text: 'Contact Me', href: '#features', icon: 'tabler:phone',
+        iconDir: "left", },
     ]}
-    image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }}
+    #image={{ src: '~/assets/images/hero.png', alt: 'AstroWind Hero Image' }} 
   >
-    <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white highlight"> Astro 4.0</span> + Tailwind CSS
+   <!-- Remove # above to Render Image -->
+    <Fragment slot="title" class:list={"text-align-left"}>
+      Hi, <small>I am</small>
+      <br>
+      <span class="text-accent dark:text-white highlight"> 🚀 Pawan Yadav 🤖</span>
+      <br>
+      <small class="font-normal"><small>Software Developer</small></small>
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 4.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
+        <span class="font-semibold">“Turning Coffee into Code, one bug at a time!”</span>
     </Fragment>
   </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:brand-dribbble',
+        callToAction: {
+          target: '_blank',
+          text: 'Dribbble',
+          href: '#',
+        },
+      },
+      {
+        icon: 'tabler:brand-behance',
+        callToAction: {
+          target: '_blank',
+          text: 'Behance',
+          href: '#',
+        },
+      },
+      {
+        icon: 'tabler:brand-pinterest',
+        callToAction: {
+          target: '_blank',
+          text: 'Pinterest',
+          href: '#',
+        },
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h3>
+      <p>
+        Hey, it's Pawan! 🚀 A passionate coder with 2 years under my belt. I've mastered the code dance in C#, Java, PHP, JavaScript, and more. From Dot Net to Unity, I've tamed them all. I whip up user-friendly software that's both sleek and savvy. Always on the lookout for new challenges—let's craft something awesome together! 💻
+      </p>
+      <br />
+      <p>
+        <span class="text-lg text-muted mb-6 dark:text-slate-300">
+          <em><strong>Fun fact:</strong> I have a secret stash of coding jokes that I slip into my projects—consider them Easter eggs for your amusement!</em>
+        </span>
+      </p>
+      <br />
+      <p>If you're curious to dive deeper into my work, you can follow me:</p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
 
   <!-- Note Widget ******************* -->
 
   <Note />
 
-  <!-- Features Widget *************** -->
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="resume"
+    title="Work experience"
+    items={[
+      {
+        title:
+          'Junior Application Developer <br /> <span class="font-normal">Ank It Solutions Pvt Ltd, Mumbai, India</span> <br /> <span class="text-sm font-normal">May 2023 - Present</span>',
+        description: `Developed web applications using Spring Boot and React.js.
+                      <br>Optimized the frontend to enhance performance and improve user experience.
+                      <br>Created comprehensive project documentation to facilitate smooth project management.
+                      <br>Collaborated with the team in planning and executing the trading project.
+                      <br>Implemented security features such as TOTP and Crypt Services to enhance project security.`,
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Software Developer <br /> <span class="font-normal">Rudratech IT Services, Mumbai, India</span> <br /> <span class="text-sm font-normal">Jan 2021 - Dec 2022</span>',
+        description: `Developed hotel, B2B, and B2C solutions with Winforms and C#, as well as added thermal printing support.
+                      <br>Created MVPs for billing solutions, games, and mobile apps.
+                      <br>Developed an LMS website with features such as AWS integration for videos, social login, payment integration, and a referral system.
+                      <br>Optimized and customized a WordPress theme for a travel website, developed games for Android, desktop, and web platforms using Unity, Javascript.
+                      <br>Optimized websites for Google ranking, added features to an HMS software, and optimized its theme for faster load.
+                      <br>Developed an app prototype in Xamarin and made changes to a Kotlin app for custom intent.
+                      <br>Created plugins for Unity apps such as date picker, calendar picker, and custom IJI modal using java and C#.
+                      <br>Developed a Bootcamp website, tours and travel website with features such as cashbook, P&L account, supplier account, expense account, etc.
+                      <br>Developed an internal management system for an export company to manage the flow of jobs between teams`,
+        icon: 'tabler:briefcase',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="resume"
+    title="Education"
+    items={[
+      {
+        title: `BSc IT <br /> <span class="font-normal">SDT Kalani College</span> <br /> <span class="text-sm font-normal">2017-2020</span>`,
+        icon: 'tabler:school',
+      },
+      {
+        title: `HSC (Computer Science) <br /> <span class="font-normal">Pet Oxford Jr. College</span> <br /> <span class="text-sm font-normal">2016-2017</span>`,
+        icon: 'tabler:school',
+      },
+      {
+        title: `SSC <br /> <span class="font-normal">Bhartiya Hindi High School</span> <br /> <span class="text-sm font-normal">2014-2015</span>`,
+        icon: 'tabler:school',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- Features Widget ***************
 
   <Features
     id="features"
@@ -99,11 +212,11 @@ const metadata = {
         icon: 'tabler:bulb',
       },
     ]}
-  />
+  /> -->
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     isReversed
     tagline="Inside template"
     title="AstroWind's Blueprint: Fun Meets Functionality!"
@@ -137,11 +250,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     isAfterContent
     items={[
       {
@@ -174,11 +287,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Content Widget **************** -->
 
-  <Content
+  <!-- <Content
     isReversed
     isAfterContent
     items={[
@@ -212,11 +325,11 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Steps Widget ****************** -->
 
-  <Steps
+  <!-- <Steps
     title="Get your dream website up and running in no time with AstroWind."
     items={[
       {
@@ -246,11 +359,11 @@ const metadata = {
       src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
       alt: 'Steps image',
     }}
-  />
+  /> -->
 
   <!-- Features2 Widget ************** -->
 
-  <Features2
+  <!-- <Features2
     title="Most used widgets"
     subtitle="Provides frequently used components for building websites using Tailwind CSS"
     tagline="Components"
@@ -306,25 +419,25 @@ const metadata = {
         icon: 'flat-color-icons:database',
       },
     ]}
-  >
+  > 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Features2>
+  </Features2> -->
 
   <!-- HighlightedPosts Widget ******* -->
 
-  <BlogLatestPosts
+  <!-- <BlogLatestPosts
     title="Find out more content in our Blog"
     information={`The blog is used to display AstroWind documentation.
                         Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
                         Astro is a very interesting technology. Thanks.
                 `}
-  />
+  /> -->
 
   <!-- FAQs Widget ******************* -->
 
-  <FAQs
+  <!-- <FAQs
     title="Frequently Asked Questions"
     subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
     tagline="FAQs"
@@ -361,22 +474,22 @@ const metadata = {
           "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
       },
     ]}
-  />
+  /> -->
 
   <!-- Stats Widget ****************** -->
 
-  <Stats
+  <!-- <Stats
     stats={[
       { title: 'Downloads', amount: '132K' },
       { title: 'Stars', amount: '24.8K' },
       { title: 'Forks', amount: '10.3K' },
       { title: 'Users', amount: '48.4K' },
     ]}
-  />
+  /> -->
 
   <!-- CallToAction Widget *********** -->
 
-  <CallToAction
+  <!-- <CallToAction
     actions={[
       {
         variant: 'primary',
@@ -395,5 +508,5 @@ const metadata = {
       Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
       waste more time! :P
     </Fragment>
-  </CallToAction>
+  </CallToAction> -->
 </Layout>

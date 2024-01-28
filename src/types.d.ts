@@ -179,6 +179,7 @@ export interface CallToAction extends HTMLAttributes<a> {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'link';
   text?: string;
   icon?: string;
+  iconDir?: 'right' | 'left';
   classes?: Record<string, string>;
   type?: 'button' | 'submit' | 'reset';
 }
@@ -279,4 +280,4 @@ export interface Content extends Headline, Widget {
   callToAction?: CallToAction;
 }
 
-export interface Contact extends Headline, Form, Widget {}
+export interface Contact extends Headline, Form, Widget { }
