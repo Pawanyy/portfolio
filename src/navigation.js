@@ -4,19 +4,19 @@ export const headerData = {
   links: [
     {
       text: 'About',
-      href: getPermalink('/About'),
+      href: getPermalink('/about'),
     },
     {
       text: 'Contact',
-      href: getPermalink('/Contact'),
+      href: getPermalink('/contact'),
     },
     {
       text: 'Blog',
-      href: getPermalink('/Blog'),
+      href: getPermalink('/blog'),
     },
     {
       text: 'Projects',
-      href: getPermalink('/Projects'),
+      href: getPermalink('/project'),
     },
     // {
     //   text: 'Homes',
@@ -182,11 +182,17 @@ export const footerData = {
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/Pawanyy' },
+    { ariaLabel: 'X', icon: 'tabler:brand-x', target: '_blank', href: '#' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', target: '_blank', href: '#' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', target: '_blank', href: '#' },
+    { ariaLabel: 'RSS', icon: 'tabler:rss', target: '_blank', href: getAsset('/rss.xml') },
+    { ariaLabel: 'Github', icon: 'tabler:brand-github', target: '_blank', href: 'https://github.com/Pawanyy' },
+    {
+      ariaLabel: 'Linkedin',
+      icon: 'tabler:brand-linkedin',
+      target: '_blank',
+      href: 'https://www.linkedin.com/in/pawan-yadav-a455a31b8/',
+    },
   ],
   footNote: `
     &copy;2023 Made by <a class="text-blue-600 hover:underline dark:text-gray-200" href="/"> Pawan Yadav</a> · All rights reserved.

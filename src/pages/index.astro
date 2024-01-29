@@ -13,6 +13,8 @@ import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import { getImage } from 'astro:assets';
 import Steps2 from '~/components/widgets/Steps2.astro';
+import { getPermalink } from '~/utils/permalinks';
+import Skills from '~/components/widgets/Skills.astro';
 
 const metadata = {
   title: 'Portfolio — Pawan Yadav',
@@ -33,7 +35,7 @@ const metadata = {
         icon: 'tabler:device-imac',
         iconDir: 'left',
       },
-      { text: 'Contact Me', href: '#features', icon: 'tabler:phone', iconDir: 'left' },
+      { text: 'Contact Me', href: getPermalink('/contact'), icon: 'tabler:phone', iconDir: 'left' },
     ]}
     image={{ src: '~/assets/images/hero.png', alt: 'Hero Image' }}
   >
@@ -362,7 +364,7 @@ const metadata = {
 
   <!-- Features2 Widget ************** -->
 
-  <Features2
+  <Skills
     title="Skills"
     subtitle="Debugging with Jedi-level patience, and making computers do the cha-cha-cha."
     tagline="What i can do"
@@ -429,7 +431,7 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Features2>
+  </Skills>
 
   <!-- HighlightedPosts Widget ******* -->
 
@@ -529,20 +531,20 @@ const metadata = {
     }}
     items={[
       {
-        title: 'Email us',
+        title: 'Email',
         description: 'yadavpawan69290@gmail.com',
         href: '',
         icon: 'tabler:mail',
       },
       {
-        title: 'Call us',
-        description: '+91 7276616829',
-        icon: 'tabler:headset',
+        title: 'Phone',
+        description: '+91 (727) 661-6829',
+        icon: 'tabler:phone',
       },
       {
-        title: 'Follow us',
-        description: '@example',
-        icon: 'tabler:brand-twitter',
+        title: 'Github',
+        description: '@pawanyy',
+        icon: 'tabler:brand-github',
       },
     ]}
   />
