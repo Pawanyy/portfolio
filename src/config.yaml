@@ -1,6 +1,6 @@
 site:
   name: 'Pawan Yadav'
-  site: 'https://astrowind.vercel.app'
+  site: 'https://beta-pawanyadav.vercel.app'
   base: '/'
   trailingSlash: false
 
@@ -10,7 +10,7 @@ site:
 metadata:
   title:
     default: 'Portfolio - Pawan Yadav'
-    template: '%s — Portfolio - Pawan Yadav'
+    template: '%s - Portfolio - Pawan Yadav'
   description: "\U0001F680 Professional Portfolios, web developer, pawan, pawanyyy, pawan yadav, pawan Blogs"
   robots:
     index: true

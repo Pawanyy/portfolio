@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -23,6 +24,34 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+
+  <!-- <Hero2
+    actions={[
+      {
+        variant: 'primary',
+        text: 'View My Work',
+        href: 'https://github.com/Pawanyy?tab=repositories',
+        target: '_blank',
+        icon: 'tabler:device-imac',
+        iconDir: 'left',
+      },
+      { text: 'Contact Me', href: getPermalink('/contact'), icon: 'tabler:phone', iconDir: 'left' },
+    ]}
+    image={{ src: '~/assets/images/laptopuser.png', alt: 'Hero Image' }}
+  >
+    <Fragment slot="title" class:list={'text-align-left'}>
+      <span class:list={'text-5xl'}>Hi, <small class="font-medium">I am</small></span>
+      <br />
+      <span class="text-accent dark:text-white highlight"> 🚀 Pawan Yadav 🤖</span>
+      <br />
+      <small class="font-semibold"><small>Software Developer</small></small>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="font-semibold">“Turning Coffee into Code, one bug at a time!”</span>
+    </Fragment>
+  </Hero2> -->
+
   <!-- Hero Widget ******************* -->
 
   <Hero
@@ -37,11 +66,11 @@ const metadata = {
       },
       { text: 'Contact Me', href: getPermalink('/contact'), icon: 'tabler:phone', iconDir: 'left' },
     ]}
-    image={{ src: '~/assets/images/hero.png', alt: 'Hero Image' }}
+    #image={{ src: '~/assets/images/hero.png', alt: 'Hero Image' }}
   >
     <!-- Remove # above to Render Image -->
     <Fragment slot="title" class:list={'text-align-left'}>
-      Hi, <small>I am</small>
+      <span class='text-5xl'>Hi, <small class="font-semibold">I am</small></span>
       <br />
       <span class="text-accent dark:text-white highlight"> 🚀 Pawan Yadav 🤖</span>
       <br />
