@@ -16,6 +16,7 @@ import { getImage } from 'astro:assets';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import { getPermalink } from '~/utils/permalinks';
 import Skills from '~/components/widgets/Skills.astro';
+import ProjectLatest from '~/components/widgets/ProjectLatest.astro';
 
 const metadata = {
   title: 'Portfolio — Pawan Yadav',
@@ -462,15 +463,25 @@ const metadata = {
     </Fragment>
   </Skills>
 
+    <!-- ProjectLatest Widget ******* -->
+
+    <ProjectLatest
+    class:list={'bg-white'}
+      title="My Projects"
+      information={`Explore my coding universe – where websites come to life and games defy gravity. 
+                  <br/>Each project is a story, a puzzle, and a triumph. Ready for a quick tour? 
+                  <br/>Let's dive into the code adventure! 🌐 🎮
+                `}
+      tagline="Where Code Meets Creativity! 🌟💻"
+  />
+
   <!-- HighlightedPosts Widget ******* -->
 
-  <!-- <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-  /> -->
+  <BlogLatestPosts
+    classes={{container: 'inset-0 bg-blue-50 dark:bg-transparent'}}
+    title="Latest Blogs"
+    information={`The blog is used to display Each new article will be an important step that you will need to know to be an expert.`}
+  />
 
   <!-- FAQs Widget ******************* -->
 

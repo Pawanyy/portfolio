@@ -1,7 +1,7 @@
 ---
 import { APP_BLOG } from '~/utils/config';
 
-import Grid from '~/components/blog/Grid.astro';
+import Grid from '~/components/project/Grid.astro';
 
 import { getBlogPermalink } from '~/utils/permalinks';
 import { findLatestPosts } from '~/utils/blog';
@@ -11,6 +11,7 @@ import Button from '../ui/Button.astro';
 
 export interface Props extends Widget {
   title?: string;
+  tagline?: string;
   linkText?: string;
   linkUrl?: string | URL;
   information?: string;
@@ -18,8 +19,9 @@ export interface Props extends Widget {
 }
 
 const {
+  tagline,
   title = await Astro.slots.render('title'),
-  linkText = 'View all posts',
+  linkText = 'View all projects',
   linkUrl = getBlogPermalink(),
   information = await Astro.slots.render('information'),
   count = 4,
@@ -36,27 +38,31 @@ const posts = APP_BLOG.isEnabled ? await findLatestPosts({ count }) : [];
 {
   APP_BLOG.isEnabled ? (
     <WidgetWrapper id={id} isDark={isDark} containerClass={classes?.container} bg={bg}>
-      <div class="flex flex-col lg:justify-between lg:flex-row mb-8">
+      <div class="flex flex-col justify-between mb-8">
+
+        {tagline && (<div class="text-md text-center mb-4 font-medium">{tagline}</div>)}
+
         {title && (
-          <div class="md:max-w-sm">
             <h2
-              class="text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-2"
+              class="text-3xl text-center font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-4"
               set:html={title}
-              />
-            {information && <p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md" set:html={information} />}
-          </div>
+            />
         )}
 
-        <div class="flex items-end">
-          {APP_BLOG.list.isEnabled && linkText && linkUrl && (
-            <Button variant="secondary" href={linkUrl}>
-              {linkText}
-            </Button>
-          )}
-        </div>
+        {information && <p class="text-muted dark:text-slate-400 lg:text-sm text-center" set:html={information} />}
       </div>
 
       <Grid posts={posts} />
+
+      {APP_BLOG.list.isEnabled && linkText && linkUrl && (
+        <div class="flex justify-center">
+          <Button variant="secondary" href={linkUrl}>
+              {' '}
+              {linkText}
+            </Button>
+        </div>
+      )}
+
     </WidgetWrapper>
   ) : (
     <Fragment />
