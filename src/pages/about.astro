@@ -7,7 +7,7 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'About us',
+  title: 'About',
 };
 ---
 
@@ -15,68 +15,34 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    tagline="About us"
+    tagline="About"
     image={{
       src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
       alt: 'Caos Image',
     }}
   >
     <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white highlight"> Beautiful Website Templates</span>
+      Greetings <br />
+      <span class="text-accent dark:text-white highlight"> I'm Pawan Yadav.</span>
     </Fragment>
 
-    <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+    <Fragment class:list={"text-justify"} slot="subtitle">
+      A dynamic and results-driven Software Developer with a fervor for creating innovative solutions. With 2 years of hands-on experience, I specialize in a diverse range of technologies, including C#, Java, PHP, JavaScript, Dot Net, Laravel, MySQL, Unity, and WinForms with SQL Server. My mission is to deliver software solutions that not only meet the client's requirements but also exceed expectations through intuitive design and robust functionality.
     </Fragment>
   </Hero>
 
-  <!-- Stats Widget ****************** -->
+  <!-- Features3 Widget ************** -->
 
-  <Stats
-    title="Statistics about us"
-    stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
-    ]}
+  <Features3
+    title="Professional Journey"
+    subtitle=`My journey in the software development realm began with a Bachelor's degree in Information Technology from SDT Kalani College, where I graduated with a commendable CGPA of 8.57. I've consistently sought challenges to broaden my horizons and refine my skills.
+    In my current role at Ank It Solutions Pvt Ltd as a Junior Application Developer, I contribute to the development of web applications using Spring Boot and React.js. I've played a crucial role in optimizing front-end performance, enhancing the user experience, and implementing advanced security features to fortify project integrity.    
+    Prior to this, at Rudratech IT Services, I honed my skills as a Software Developer, working on diverse projects ranging from hotel and B2B solutions to game development and mobile apps. My contributions included optimizing websites for improved Google ranking, developing applications in Xamarin and Kotlin, and creating plugins for Unity applications.`
   />
 
   <!-- Features3 Widget ************** -->
 
-  <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
-    columns={3}
-    isBeforeContent={true}
-    items={[
-      {
-        title: 'Educational',
-        description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Interior Design',
-        description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Photography',
-        description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
-      },
-    ]}
-  />
-
-  <!-- Features3 Widget ************** -->
-
-  <Features3
+  <!-- <Features3
     columns={3}
     isAfterContent={true}
     items={[
@@ -121,30 +87,30 @@ const metadata = {
       src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
       alt: 'Colorful Image',
     }}
-  />
+  /> -->
 
   <!-- Steps2 Widget ****************** -->
 
   <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
-    items={[
-      {
-        title: 'Customer-centric approach',
-        description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
-      },
-      {
-        title: 'Constant Improvement',
-        description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
-      },
-      {
-        title: 'Ethical Practices',
-        description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-      },
-    ]}
+    title="Passions and Interests"
+    subtitle="Beyond the world of code, I find joy in activities like reading, chess, and video games. These pursuits not only provide relaxation but also contribute to my holistic development."
+      items={[
+        {
+          title: 'Reading',
+          description:
+            'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
+        },
+        {
+          title: 'Chess',
+          description:
+            'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
+        },
+        {
+          title: 'Video Game',
+          description:
+            'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        },
+      ]}
   />
 
   <!-- Steps2 Widget ****************** -->
@@ -180,7 +146,7 @@ const metadata = {
 
   <!-- Features2 Widget ************** -->
 
-  <Features2
+  <!-- <Features2
     title="Our locations"
     tagline="Find us"
     columns={4}
@@ -202,7 +168,7 @@ const metadata = {
         description: '3456 Lorem Ipsum St, 34567, São Paulo',
       },
     ]}
-  />
+  /> -->
 
   <!-- Features2 Widget ************** -->
 
