@@ -60,6 +60,46 @@ export interface AppBlogConfig {
     };
   };
 }
+
+export interface AppProjectConfig {
+  isEnabled: boolean;
+  projectsPerPage: number;
+  isRelatedProjectsEnabled: boolean;
+  relatedProjectsCount: number;
+  project: {
+    isEnabled: boolean;
+    permalink: string;
+    robots: {
+      index: boolean;
+      follow: boolean;
+    };
+  };
+  list: {
+    isEnabled: boolean;
+    pathname: string;
+    robots: {
+      index: boolean;
+      follow: boolean;
+    };
+  };
+  category: {
+    isEnabled: boolean;
+    pathname: string;
+    robots: {
+      index: boolean;
+      follow: boolean;
+    };
+  };
+  tag: {
+    isEnabled: boolean;
+    pathname: string;
+    robots: {
+      index: boolean;
+      follow: boolean;
+    };
+  };
+}
+
 export interface AnalyticsConfig {
   vendors: {
     googleAnalytics: {
@@ -75,6 +115,7 @@ const config = yaml.load(fs.readFileSync('src/config.yaml', 'utf8')) as {
   i18n?: I18NConfig;
   apps?: {
     blog?: AppBlogConfig;
+    project?: AppProjectConfig;
   };
   ui?: unknown;
   analytics?: unknown;
@@ -177,6 +218,49 @@ const getAppBlog = () => {
   return merge({}, _default, config?.apps?.blog ?? {}) as AppBlogConfig;
 };
 
+const getAppProject = () => {
+  const _default = {
+    isEnabled: false,
+    projectsPerPage: 6,
+    isRelatedProjectsEnabled: false,
+    relatedProjectsCount: 4,
+    project: {
+      isEnabled: true,
+      permalink: '/project/%slug%',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    list: {
+      isEnabled: true,
+      pathname: 'project',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    category: {
+      isEnabled: true,
+      pathname: 'category',
+      robots: {
+        index: true,
+        follow: true,
+      },
+    },
+    tag: {
+      isEnabled: true,
+      pathname: 'tag',
+      robots: {
+        index: false,
+        follow: true,
+      },
+    },
+  };
+
+  return merge({}, _default, config?.apps?.project ?? {}) as AppProjectConfig;
+};
+
 const getUI = () => {
   const _default = {
     theme: 'system',
@@ -204,5 +288,6 @@ export const SITE = getSite();
 export const I18N = getI18N();
 export const METADATA = getMetadata();
 export const APP_BLOG = getAppBlog();
+export const APP_PROJECT = getAppProject();
 export const UI = getUI();
 export const ANALYTICS = getAnalytics();
