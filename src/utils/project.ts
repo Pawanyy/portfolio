@@ -3,7 +3,14 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { Project } from '~/types';
 import { APP_PROJECT } from '~/utils/config';
-import { cleanSlug, trimSlash, PROJECT_BASE, PROJECT_PERMALINK_PATTERN, PROJECT_CATEGORY_BASE, PROJECT_TAG_BASE } from './permalinks';
+import {
+  cleanSlug,
+  trimSlash,
+  PROJECT_BASE,
+  PROJECT_PERMALINK_PATTERN,
+  PROJECT_CATEGORY_BASE,
+  PROJECT_TAG_BASE,
+} from './permalinks';
 
 const generatePermalink = async ({
   id,
@@ -229,7 +236,9 @@ export const getStaticPathsProjectTag = async ({ paginate }: { paginate: Paginat
 
   return Array.from(tags).flatMap((tag) =>
     paginate(
-      projects.filter((project) => Array.isArray(project.tags) && project.tags.find((elem) => elem.toLowerCase() === tag)),
+      projects.filter(
+        (project) => Array.isArray(project.tags) && project.tags.find((elem) => elem.toLowerCase() === tag)
+      ),
       {
         params: { tag: tag, project: PROJECT_TAG_BASE || undefined },
         pageSize: projectsPerPage,
@@ -244,13 +253,17 @@ export function getRelatedProjects(allProjects: Project[], currentSlug: string, 
   if (!isProjectEnabled || !isRelatedProjectsEnabled) return [];
 
   const relatedProjects = getRandomizedProjects(
-    allProjects.filter((project) => project.slug !== currentSlug && project.tags?.some((tag) => currentTags.includes(tag))),
+    allProjects.filter(
+      (project) => project.slug !== currentSlug && project.tags?.some((tag) => currentTags.includes(tag))
+    ),
     APP_PROJECT.relatedProjectsCount
   );
 
   if (relatedProjects.length < APP_PROJECT.relatedProjectsCount) {
     const moreProjects = getRandomizedProjects(
-      allProjects.filter((project) => project.slug !== currentSlug && !project.tags?.some((tag) => currentTags.includes(tag))),
+      allProjects.filter(
+        (project) => project.slug !== currentSlug && !project.tags?.some((tag) => currentTags.includes(tag))
+      ),
       APP_PROJECT.relatedProjectsCount - relatedProjects.length
     );
     relatedProjects.push(...moreProjects);
