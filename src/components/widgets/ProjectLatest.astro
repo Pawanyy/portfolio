@@ -39,14 +39,13 @@ const posts = APP_BLOG.isEnabled ? await findLatestPosts({ count }) : [];
   APP_BLOG.isEnabled ? (
     <WidgetWrapper id={id} isDark={isDark} containerClass={classes?.container} bg={bg}>
       <div class="flex flex-col justify-between mb-8">
-
-        {tagline && (<div class="text-md text-center mb-4 font-medium">{tagline}</div>)}
+        {tagline && <div class="text-md text-center mb-4 font-medium">{tagline}</div>}
 
         {title && (
-            <h2
-              class="text-3xl text-center font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-4"
-              set:html={title}
-            />
+          <h2
+            class="text-3xl text-center font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-4"
+            set:html={title}
+          />
         )}
 
         {information && <p class="text-muted dark:text-slate-400 lg:text-sm text-center" set:html={information} />}
@@ -57,12 +56,11 @@ const posts = APP_BLOG.isEnabled ? await findLatestPosts({ count }) : [];
       {APP_BLOG.list.isEnabled && linkText && linkUrl && (
         <div class="flex justify-center">
           <Button variant="secondary" href={linkUrl}>
-              {' '}
-              {linkText}
-            </Button>
+            {' '}
+            {linkText}
+          </Button>
         </div>
       )}
-
     </WidgetWrapper>
   ) : (
     <Fragment />

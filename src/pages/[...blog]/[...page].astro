@@ -37,16 +37,11 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
-    <Headline
-      subtitle="The Dev Diaries: Insights into a Developer's Mind"
-    >
-      The Blog
-    </Headline>
+    <Headline subtitle="The Dev Diaries: Insights into a Developer's Mind"> The Blog </Headline>
     <BlogList posts={page.data} />
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-    
-      <!-- <PostTags tags={allCategories} class="mb-2" title="Search by Categories:" isCategory />
+
+    <!-- <PostTags tags={allCategories} class="mb-2" title="Search by Categories:" isCategory />
       <PostTags tags={allTags}  title="Search by Tags:" /> -->
-   
   </section>
 </Layout>
