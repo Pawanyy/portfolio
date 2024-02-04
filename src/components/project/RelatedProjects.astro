@@ -1,0 +1,28 @@
+---
+import { APP_PROJECT } from '~/utils/config';
+
+import { fetchProjects, getRelatedProjects } from '~/utils/project';
+import ProjectHighlightedPosts from '../widgets/ProjectHighlightedPosts.astro';
+import type { Project } from '~/types';
+import { getProjectPermalink } from '~/utils/permalinks';
+
+export interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const fetchedProjects = await fetchProjects();
+const relatedProjects = project.tags ? getRelatedProjects(fetchedProjects, project.slug, project.tags) : [];
+---
+
+{
+  APP_PROJECT.isRelatedProjectsEnabled ? (
+    <ProjectHighlightedPosts
+      classes={{ container: 'pt-0 lg:pt-0 md:pt-0' }}
+      title="Related Posts"
+      linkText="View All Posts"
+      linkUrl={getProjectPermalink()}
+      postIds={relatedProjects.map((project) => project.id)}
+    />
+  ) : null
+}
