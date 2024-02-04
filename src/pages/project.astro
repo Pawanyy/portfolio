@@ -1,0 +1,43 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero2 from '~/components/widgets/Hero2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Pawan Yadav - Projects',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="Projects"
+    title="My Projects"
+    subtitle=`🚧 Under Construction - Exciting Projects Coming Soon! 🚧
+    <br/>I'm currently hard at work on some amazing creations that showcase my passion for coding and problem-solving.`
+    actions={[
+      { variant: 'primary', text: 'Contact', href: '/contact', icon: 'tabler:phone' },
+      { text: 'Learn more', href: '/about' },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1592620361408-9a6acd17ba49?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      alt: 'Coming Soon Projects',
+    }}
+  />
+
+  <CallToAction
+    title="Coming soon"
+    subtitle="I'm currently hard at working on the content of these pages. You will see them very soon. Stay tuned!"
+    actions={[
+      {
+        variant: 'primary',
+        text: '@Pawanyy',
+        href: 'https://github.com/pawanyy',
+        icon: 'tabler:brand-github',
+      },
+    ]}
+  />
+</Layout>
