@@ -3,8 +3,8 @@ import { APP_PROJECT } from '~/utils/config';
 
 import Grid from '~/components/project/Grid.astro';
 
-import { getBlogPermalink } from '~/utils/permalinks';
-import { findLatestPosts } from '~/utils/blog';
+import { getProjectPermalink } from '~/utils/permalinks';
+import { findLatestProjects } from '~/utils/project';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Widget } from '~/types';
 import Button from '../ui/Button.astro';
@@ -22,7 +22,7 @@ const {
   tagline,
   title = await Astro.slots.render('title'),
   linkText = 'View all projects',
-  linkUrl = getBlogPermalink(),
+  linkUrl = getProjectPermalink(),
   information = await Astro.slots.render('information'),
   count = 4,
 
@@ -32,7 +32,7 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
-const projects = APP_PROJECT.isEnabled ? await findLatestPosts({ count }) : [];
+const projects = APP_PROJECT.isEnabled ? await findLatestProjects({ count }) : [];
 ---
 
 {
@@ -51,7 +51,7 @@ const projects = APP_PROJECT.isEnabled ? await findLatestPosts({ count }) : [];
         {information && <p class="text-muted dark:text-slate-400 lg:text-sm text-center" set:html={information} />}
       </div>
 
-      <Grid posts={projects} />
+      <Grid projects={projects} />
 
       {APP_PROJECT.list.isEnabled && linkText && linkUrl && (
         <div class="flex justify-center">

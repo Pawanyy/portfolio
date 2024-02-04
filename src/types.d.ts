@@ -44,6 +44,49 @@ export interface Post {
   readingTime?: number;
 }
 
+export interface Project {
+  /** A unique ID number that identifies a project. */
+  id: string;
+
+  /** A project’s unique slug – part of the project’s URL based on its name, i.e. a post called “My Sample Page” has a slug “my-sample-page”. */
+  slug: string;
+
+  /**  */
+  permalink: string;
+
+  /**  */
+  publishDate: Date;
+  /**  */
+  updateDate?: Date;
+
+  /**  */
+  title: string;
+  /** Optional summary of project content. */
+  excerpt?: string;
+  /**  */
+  image?: ImageMetadata | string;
+
+  /**  */
+  category?: string;
+  /**  */
+  tags?: Array<string>;
+  /**  */
+  author?: string;
+
+  /**  */
+  metadata?: MetaData;
+
+  /**  */
+  draft?: boolean;
+
+  /**  */
+  Content?: AstroComponentFactory;
+  content?: string;
+
+  /**  */
+  readingTime?: number;
+}
+
 export interface MetaData {
   title?: string;
   ignoreTitleTemplate?: boolean;
@@ -280,4 +323,4 @@ export interface Content extends Headline, Widget {
   callToAction?: CallToAction;
 }
 
-export interface Contact extends Headline, Form, Widget {}
+export interface Contact extends Headline, Form, Widget { }
