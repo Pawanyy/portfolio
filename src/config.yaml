@@ -11,7 +11,7 @@ metadata:
   title:
     default: 'Portfolio - Pawan Yadav'
     template: '%s - Portfolio - Pawan Yadav'
-  description: "\U0001F680 Professional Portfolios, web developer, pawan, pawanyyy, pawan yadav, pawan Blogs"
+  description: "\U0001F680 Professional Portfolio, web developer, pawan, pawanyyy, pawan yadav, pawan Blogs"
   robots:
     index: true
     follow: true
