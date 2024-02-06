@@ -6,15 +6,21 @@ paths:
   layouts:
 collections_config:
   posts:
-    path: content/blog
+    path: content/post
     output: true
     url: /blog/[slug]/
+    description: ''
     icon: notes
+    _editables: {}
     _enabled_editors:
       - content
+    _inputs: {}
+    _select_data: {}
+    _structures: {}
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+    schemas: {}
   pages:
     path: content/project
     output: true
