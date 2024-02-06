@@ -6,7 +6,7 @@ paths:
   layouts:
 collections_config:
   posts:
-    path: content/post
+    path: src/content/post
     output: true
     url: /blog/[slug]/
     description: ''
