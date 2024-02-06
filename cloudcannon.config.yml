@@ -4,7 +4,33 @@ paths:
   collections: ''
   data: ''
   layouts:
-collections_config: {}
+collections_config:
+  posts:
+    path: content/blog
+    output: true
+    url: /blog/[slug]/
+    icon: notes
+    _enabled_editors:
+      - content
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+  pages:
+    path: content/project
+    output: true
+    url: /[slug]/
+    description: ''
+    icon: notes
+    _editables: {}
+    _enabled_editors:
+      - visual
+    _inputs: {}
+    _select_data: {}
+    _structures: {}
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+    schemas: {}
 _inputs: {}
 _select_data: {}
 _structures: {}
