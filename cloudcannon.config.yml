@@ -21,7 +21,7 @@ collections_config:
     disable_add_folder: false
     disable_file_actions: false
     schemas: {}
-  pages:
+  projects:
     path: content/project
     output: true
     url: /project/[slug]/
