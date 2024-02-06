@@ -25,11 +25,22 @@ collections_config:
     path: src/content/project
     output: true
     url: /project/[slug]/
+    filter:
     description: ''
-    icon: notes
+    icon: computer
+    preview:
+      text:
+      subtext:
+      icon:
+      icon_color:
+      image:
+      metadata:
+      gallery:
     _editables: {}
     _enabled_editors:
       - visual
+      - data
+      - content
     _inputs: {}
     _select_data: {}
     _structures: {}
