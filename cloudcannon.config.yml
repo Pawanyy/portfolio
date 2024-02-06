@@ -24,7 +24,7 @@ collections_config:
   pages:
     path: content/project
     output: true
-    url: /[slug]/
+    url: /project/[slug]/
     description: ''
     icon: notes
     _editables: {}
