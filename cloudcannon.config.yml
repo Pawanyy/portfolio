@@ -48,7 +48,12 @@ _inputs:
 _select_data: {}
 _structures: {}
 _editables: {}
-data_config: {}
+data_config:
+  data:
+    path: /src/data
+    parser: json
+editor:
+  default_path:
 source_editor:
   tab_size: 2
   theme: monokai
