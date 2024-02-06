@@ -41,7 +41,10 @@ _enabled_editors:
   - content
   - data
   - visual
-_inputs: {}
+_inputs:
+  Image:
+    type: image
+    cascade: true
 _select_data: {}
 _structures: {}
 _editables: {}
