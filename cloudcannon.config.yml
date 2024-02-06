@@ -22,7 +22,7 @@ collections_config:
     disable_file_actions: false
     schemas: {}
   projects:
-    path: content/project
+    path: src/content/project
     output: true
     url: /project/[slug]/
     description: ''
