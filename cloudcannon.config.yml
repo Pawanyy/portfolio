@@ -14,8 +14,6 @@ collections_config:
     _editables: {}
     _enabled_editors:
       - content
-      - data
-      - visual
     _inputs: {}
     _select_data: {}
     _structures: {}
@@ -27,22 +25,11 @@ collections_config:
     path: src/content/project
     output: true
     url: /project/[slug]/
-    filter:
     description: ''
-    icon: computer
-    preview:
-      text:
-      subtext:
-      icon:
-      icon_color:
-      image:
-      metadata:
-      gallery:
+    icon: notes
     _editables: {}
     _enabled_editors:
       - visual
-      - data
-      - content
     _inputs: {}
     _select_data: {}
     _structures: {}
@@ -50,6 +37,10 @@ collections_config:
     disable_add_folder: false
     disable_file_actions: false
     schemas: {}
+_enabled_editors:
+  - content
+  - data
+  - visual
 _inputs: {}
 _select_data: {}
 _structures: {}
