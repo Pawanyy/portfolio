@@ -1,0 +1,52 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'About',
+};
+---
+
+<Layout metadata={metadata}>
+    <div class="flex">
+        <div class="flex-1">    
+            <textarea id="textarea-source" class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900"></textarea>
+        </div>
+        <div class="flex">
+            <button class="btn-primary" id="format-btn">Format</button>
+            <select id="tabSpace">
+                <option value="2" selected>2 Tab</option>
+                <option value="3">3 Tab</option>
+                <option value="4">4 Tab</option>
+              </select>
+            <button class="btn-primary" id="minify-btn">Minify</button>
+        </div>
+        <div class="flex-1">
+            <textarea id="textarea-result" class="py-3 px-4 block w-full text-md rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900" readonly></textarea>
+        </div>    
+    </div>
+    <script>
+        const source = document.getElementById("textarea-source");
+        const result = document.getElementById("textarea-result");
+
+        const tabSpace = document.getElementById("tabSpace");
+
+        const minifyBtn = document.getElementById("minify-btn");
+        const formatBtn = document.getElementById("format-btn");
+
+        formatBtn?.addEventListener("click", () => {
+            try {
+                result.value = JSON.stringify(JSON.parse(source.value), null, parseInt(tabSpace.value));  
+            } catch(error){
+                result.value = error;
+            }
+        })
+
+        minifyBtn?.addEventListener("click", () => {
+            try {
+                result.value = JSON.stringify(JSON.parse(source.value), null, 0);  
+            } catch(error){
+                result.value = error;
+            }
+        })
+    </script>
+</Layout>
