@@ -9,6 +9,18 @@ import { WorkExperience } from '../models/model';
 export class WorkExperienceComponent {
   workExpList: WorkExperience[] = [
     {
+      role: 'Junior Application Developer',
+      company: 'Ank It Solutions Pvt Ltd',
+      duration: 'May 2023 - Present',
+      description: [
+        'Developed web applications using Spring Boot and React.js.',
+        'Optimized the frontend to enhance performance and improve user experience.',
+        'Created comprehensive project documentation to facilitate smooth project management.',
+        'Collaborated with the team in planning and executing the trading project.',
+        'Implemented security features such as TOTP and Crypt Services to enhance project security.',
+      ]
+    },
+    {
       role: 'Software Developer',
       company: 'Rudratech IT Services',
       duration: 'Jan 2021 - Dec 2022',

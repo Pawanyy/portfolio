@@ -24,6 +24,16 @@ export class SkillsComponent {
       rating: 70,
     },
     {
+      name: 'Node JS',
+      level: 'Intermediate',
+      rating: 70,
+    },
+    {
+      name: 'React.JS',
+      level: 'Intermediate',
+      rating: 70,
+    },
+    {
       name: 'C#',
       level: 'Intermediate',
       rating: 65,

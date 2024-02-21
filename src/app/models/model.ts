@@ -11,7 +11,7 @@ export interface WorkExperience {
     company: string;
     duration: string;
     description: string[];
-    contact: string[];
+    contact?: string[];
 }
 
 export interface Skill {

@@ -1,16 +1,16 @@
 <div class="container">
-    <h1>Work Experience</h1>
+  <h1>Work Experience</h1>
 
-    <ul class="exp_container">
-        <li *ngFor="let workExp of workExpList">
-            <h2>{{ workExp.role }}</h2>
-            <h3>{{ workExp.company }}</h3>
-            <h4>{{ workExp.duration }}</h4>
-            <ul>
-                <li *ngFor="let desc of workExp.description">
-                    {{ desc }}
-                </li>
-            </ul>
+  <ul class="exp_container">
+    <li *ngFor="let workExp of workExpList">
+      <h2>{{ workExp.company }}</h2>
+      <h3>{{ workExp.role }}</h3>
+      <h4>{{ workExp.duration }}</h4>
+      <ul>
+        <li *ngFor="let desc of workExp.description">
+          {{ desc }}
         </li>
-    </ul>
+      </ul>
+    </li>
+  </ul>
 </div>
