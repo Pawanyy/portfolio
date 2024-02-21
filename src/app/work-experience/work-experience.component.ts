@@ -18,6 +18,7 @@ export class WorkExperienceComponent {
         'Created comprehensive project documentation to facilitate smooth project management.',
         'Collaborated with the team in planning and executing the trading project.',
         'Implemented security features such as TOTP and Crypt Services to enhance project security.',
+        'Worked on integrating APIs such as BGV or writing new APIs in Jio Payments Bank project using node js.'
       ]
     },
     {
