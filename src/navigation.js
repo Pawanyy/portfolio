@@ -127,7 +127,7 @@ export const headerData = {
     //   ],
     // },
   ],
-  actions: [{ text: 'Resume', href: '#', icon: 'tabler:download', iconDir: 'left', target: '_blank' }],
+  actions: [{ text: 'Resume', href: 'resume', icon: 'tabler:download', iconDir: 'left', target: '_blank' }],
 };
 
 export const footerData = {

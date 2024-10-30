@@ -1,0 +1,220 @@
+---
+import profile from "../data/profile";
+import { Icon } from "astro-icon/components";
+import "../styles/style.css";
+import { convertDateRange } from "../utils/helper";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body
+    class="grid -min-h-screen place-items-center bg-gray-400 print:bg-white font-sans"
+  >
+    <main
+      class="m-4 pb-8 w-[210mm] rounded-md bg-white shadow-lg print:m-0 print:h-screen print:w-screen print:rounded-none print:shadow-none"
+    >
+      <section class="profile-info mb-2 grid grid-cols-1 gap-1">
+        <h1 class="text-4xl font-semibold">{profile.name}</h1>
+        <span class="text-xl font-semibold text-gray-700"
+          >{profile.designation}</span
+        >
+        <div class="w-full">
+          {profile.description}
+        </div>
+      </section>
+      <section class="profile-details bg-gray-700 text-white font-medium py-2">
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <a
+              class="flex items-center space-x-1"
+              href={"mailto: " + profile.social.mail}
+            >
+              <Icon name="mdi:email" />
+              <span>{profile.social.mail}</span>
+            </a>
+          </div>
+          <div>
+            <a href={"tel:" + profile.social.phone}>
+              <Icon name="mdi:phone" />
+              <span>{profile.social.phone}</span>
+            </a>
+          </div>
+          <div>
+            <a
+              href={"https://www.google.com/maps/place/" +
+                profile.social.location}
+              target="_blank"
+            >
+              <Icon name="mdi:location" />
+              <span>{profile.social.location}</span>
+            </a>
+          </div>
+          <div>
+            <a href={"https://" + profile.social.website} target="_blank">
+              <Icon name="mdi:web" />
+              <span>{profile.social.website}</span>
+            </a>
+          </div>
+          <div>
+            <a href={"https://" + profile.social.linkedin} target="_blank">
+              <Icon name="mdi:linkedin" />
+              <span>{profile.social.linkedin}</span>
+            </a>
+          </div>
+          <div>
+            <a href={"https://" + profile.social.github} target="_blank">
+              <Icon name="mdi:github" />
+              <span>{profile.social.github}</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="work-exp">
+        <h2 class="title">Work Experience</h2>
+        {
+          profile.workExperience.map((workExp) => {
+            return (
+              <div class="mb-2 last:mb-0">
+                <h4 class="text-lg font-bold before-line">
+                  {workExp.jobTitle}
+                </h4>
+                <h3 class="text-xl font-medium">{workExp.company}</h3>
+                <div class="text-sm italic text-gray-500">
+                  {convertDateRange(workExp.startDate, workExp.endDate)}
+                </div>
+                <div class="text-sm italic text-gray-500">
+                  Achievements/Tasks
+                </div>
+                <ul class="list-[circle] list-outside ml-[15px] text-sm">
+                  {workExp.responsibilities.map((responsibility) => {
+                    return <li>{responsibility}</li>;
+                  })}
+                </ul>
+              </div>
+            );
+          })
+        }
+      </section>
+      <section class="education break-inside-avoid">
+        <h2 class="title">Education</h2>
+        {
+          profile.education.map((educ) => {
+            return (
+              <div class="mb-2 last:mb-0">
+                <h4 class="text-lg font-bold before-line">{educ.degree}</h4>
+                <h3 class="text-xl font-medium">{educ.institution}</h3>
+                <div class="text-sm italic text-gray-500 flex justify-between">
+                  <span>{convertDateRange(educ.startDate, educ.endDate)}</span>
+                  <span>{educ.grade}</span>
+                </div>
+              </div>
+            );
+          })
+        }
+      </section>
+      <section class="skills">
+        <h2 class="title">Skills</h2>
+        <div class="flex gap-2 flex-wrap">
+          {
+            profile.skills[0].hasOwnProperty("name")
+              ? profile.skills.map((skill) => {
+                  return (
+                    <div class="border-2 border-gray-400 bg-gray-400 text-white flex flex-col px-2 py-1 rounded">
+                      {skill.name}
+                    </div>
+                  );
+                })
+              : profile.skills.map((categorySkills) => {
+                  return (
+                    <div class="w-full">
+                      <div class="text-lg font-medium capitalize mb-1">
+                        {categorySkills.category}
+                      </div>
+                      <div class="flex gap-2 flex-wrap">
+                        {categorySkills.skills.map((skill) => {
+                          return (
+                            <div class="flex flex-col squared-pill-outline">
+                              {skill.name}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })
+          }
+        </div>
+      </section>
+      <section class="projects">
+        <h2 class="title">Personal Projects</h2>
+        <div class="projects-list">
+          {
+            profile.projects
+              .filter((project) => project.showInResume)
+              .sort((a, b) => {
+                return (
+                  new Date(b.startDate).getTime() -
+                  new Date(a.startDate).getTime()
+                );
+              })
+              .map((project) => {
+                return (
+                  <div class="mb-2 last:mb-0">
+                    <h5 class="text-lg font-medium flex items-center">
+                      {project.title}
+                      <span class="ms-2 text-sm italic text-gray-500">
+                        ({convertDateRange(project.startDate, project.endDate)})
+                      </span>
+                    </h5>
+
+                    <li class="text-base list-[circle] list-outside">
+                      {project.description}
+                    </li>
+                  </div>
+                );
+              })
+          }
+        </div>
+      </section>
+      <section class="grid grid-cols-2 p-0">
+        <section class="languages break-inside-avoid">
+          <h2 class="title">Languages</h2>
+          <div class="flex gap-2">
+            {
+              profile.languages.map((language) => {
+                return (
+                  <div class="flex flex-col w-1/6 squared-pill-outline">
+                    <span>{language.name}</span>
+                    <span class="italic text-gray-500 text-sm">
+                      {language.proficiency}
+                    </span>
+                  </div>
+                );
+              })
+            }
+          </div>
+        </section>
+        <section class="hobbies break-inside-avoid">
+          <h2 class="title">Hobbies</h2>
+          <div class="flex gap-2">
+            {
+              profile.hobbies.map((hobby) => {
+                return (
+                  <div class="flex flex-col squared-pill-outline">
+                    <span>{hobby}</span>
+                  </div>
+                );
+              })
+            }
+          </div>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+.profile-details div div a, .profile-details div div {
+    @apply flex items-center space-x-1 text-base;
+}
+
+.profile-details div div svg {
+    @apply text-xl;
+}
+
+section {
+ @apply w-[210mm] p-8 overflow-x-hidden;
+}
+
+body section {
+    @apply pb-0;
+}
+
+/* @page {
+    size: A4;
+} */
+
+section .title {
+    @apply uppercase text-2xl font-bold text-gray-700 mb-2;
+}
+
+.before-line {
+    @apply before:border-b-[2px] before:border-black flex before:w-6 before:ml-[-38px] before:mr-[14px] items-center;
+}
+
+.squared-pill {
+    @apply bg-gray-400 text-white px-2 py-1 rounded
+}
+
+.squared-pill-outline {
+    @apply border-2 border-gray-200 px-2 py-1 rounded
+}
