@@ -221,6 +221,8 @@ export interface Disclaimer {
 export interface CallToAction extends HTMLAttributes<a> {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'link';
   text?: string;
+  href?: string;
+  target?: string;
   icon?: string;
   iconDir?: 'right' | 'left';
   classes?: Record<string, string>;
@@ -323,4 +325,4 @@ export interface Content extends Headline, Widget {
   callToAction?: CallToAction;
 }
 
-export interface Contact extends Headline, Form, Widget {}
+export interface Contact extends Headline, Form, Widget { }
