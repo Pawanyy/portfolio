@@ -1,4 +1,4 @@
-import type { Profile } from "../model/models";
+import type { Profile } from "../types";
 
 const profile: Profile = {
     name: "Pawan Yadav",
@@ -68,32 +68,6 @@ const profile: Profile = {
             endDate: "01/04/2017"
         }
     ],
-    // skills: [
-    //     { name: "HTML" },
-    //     { name: "CSS" },
-    //     { name: "JavaScript" },
-    //     { name: "React JS" },
-    //     { name: "Angular" },
-    //     { name: "Vite" },
-    //     { name: "Tailwind CSS" },
-    //     { name: "Bootstrap" },
-    //     { name: "HTML" },
-    //     { name: "CSS" },
-    //     { name: "JavaScript" },
-    //     { name: "React JS" },
-    //     { name: "Angular" },
-    //     { name: "Vite" },
-    //     { name: "Tailwind CSS" },
-    //     { name: "Bootstrap" },
-    //     { name: "HTML" },
-    //     { name: "CSS" },
-    //     { name: "JavaScript" },
-    //     { name: "React JS" },
-    //     { name: "Angular" },
-    //     { name: "Vite" },
-    //     { name: "Tailwind CSS" },
-    //     { name: "Bootstrap" }
-    // ],
     skills: [
         {
             "category": "Front end",

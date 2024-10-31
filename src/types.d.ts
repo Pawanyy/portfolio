@@ -326,3 +326,91 @@ export interface Content extends Headline, Widget {
 }
 
 export interface Contact extends Headline, Form, Widget { }
+
+type Profile = {
+  name: string;
+  designation: string;
+  description: string;
+  social?: {
+    mail?: string;
+    phone?: string;
+    website?: string;
+    github?: string;
+    location?: string;
+    linkedin?: string;
+  };
+  workExperience?: WorkExperience[]; // Changed to array
+  education: Education[];
+  skills: SkillCategory[] | Skill[];
+  certifications?: Certification[]; // Changed to array
+  projects: Project[];
+  accomplishments?: Accomplishment[]; // Changed to array
+  languages: Language[]; // Changed to array
+  hobbies: string[];
+}
+
+type Language = {
+  name: string;
+  proficiency: "Beginner" | "Intermediate" | "Professional" | "Native";
+}
+
+type Education = {
+  institution: string;      // The name of the school, college, or university
+  degree: string;           // The type of degree, e.g., "Bachelor of Science", "Master of Arts"
+  boardOrUnivercity?: string,
+  fieldOfStudy?: string;     // The field of study, e.g., "Computer Science", "Business Administration"
+  startDate: string;        // The start date of the education period, e.g., "2020-08-01"
+  endDate?: string;         // The end date of the education period, optional if still ongoing
+  grade?: string;           // Optional field for GPA or overall grade, e.g., "3.8/4.0"
+  activitiesAndSocieties?: string[]; // Optional field for extracurricular activities, societies, etc.
+  description?: string;     // Optional field for additional details, honors, etc.
+}
+
+type Skill = {
+  name: string;                    // The name of the skill, e.g., "JavaScript", "Project Management"
+  proficiency?: "Beginner" | "Intermediate" | "Advanced" | "Expert"; // The proficiency level
+  yearsOfExperience?: number;      // Optional field for the number of years of experience with the skill
+  certification?: string;          // Optional field for any certifications related to the skill
+}
+
+type SkillCategory = {
+  category: string;                // The category of the skill, e.g., "Programming Language", "Soft Skill"
+  skills: Skill[];                 // An array of skills within this category
+}
+
+type WorkExperience = {
+  jobTitle: string;                // The title of the job, e.g., "Software Engineer", "Project Manager"
+  company: string;                 // The name of the company, e.g., "Google", "Microsoft"
+  location: string;                // The location of the job, e.g., "San Francisco, CA", "Remote"
+  startDate: string;               // The start date of the job, e.g., "2020-01-15"
+  endDate?: string;                // The end date of the job, optional if currently employed
+  responsibilities: string[];      // A list of key responsibilities or tasks performed
+  achievements?: string[];         // Optional field for notable achievements or accomplishments
+}
+
+type Project = {
+  title: string;                   // The title of the project, e.g., "E-Commerce Website", "Mobile App Development"
+  description: string;             // A brief description of the project, e.g., "Developed a full-featured e-commerce platform..."
+  technologies: string[];          // A list of technologies used in the project, e.g., ["JavaScript", "React", "Node.js"]
+  role?: string;                   // Optional field for the role or position held in the project, e.g., "Lead Developer"
+  startDate: string;               // The start date of the project, e.g., "2022-01-01"
+  endDate?: string;                // The end date of the project, optional if ongoing
+  url?: string;                    // Optional field for a link to the project, e.g., "https://www.example.com"
+  github?: string;                 // Optional field for a link to the project, e.g.,
+  highlights?: string[];           // Optional field for key highlights or achievements of the project
+  showInResume?: boolean;
+}
+
+type Certification = {
+  title: string;        // The title of the certification, e.g., "Certified Web Developer"
+  issuer: string;       // The organization that issued the certification, e.g., "Certification Institute"
+  dateIssued: string;   // The date the certification was issued, e.g., "2023-05-01"
+  expirationDate?: string; // Optional field for the expiration date of the certification
+}
+
+type Accomplishment = {
+  description: string; // A description of the accomplishment, e.g., "Optimized site performance, reducing load times by 30%"
+  dateAchieved: string; // The date when the accomplishment was achieved, e.g., "2023-12-01"
+}
+
+export type { Profile, Language, Education, Skill, SkillCategory, WorkExperience, Project, Certification, Accomplishment };
