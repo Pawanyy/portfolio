@@ -7,7 +7,7 @@ const profile: Profile = {
     social: {
         mail: "yadavpawan69290@gmail.com",
         phone: "+91 7276616829",
-        website: "pawanyadav.vercel.app",
+        website: "beta-pawanyadav.vercel.app",
         github: "github.com/Pawanyy",
         location: "Ulhasnagar, India",
         linkedin: "linkedin.com/in/pawan-yadav-a455a31b8"

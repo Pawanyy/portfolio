@@ -29,7 +29,7 @@ export default defineConfig({
   output: 'static',
   integrations: [
     tailwind({
-      // applyBaseStyles: false,
+      applyBaseStyles: false,
     }),
     sitemap(),
     mdx(),

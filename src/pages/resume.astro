@@ -3,6 +3,7 @@ import profile from "../data/profile";
 import { Icon } from "astro-icon/components";
 import "../styles/style.css";
 import { convertDateRange } from "../utils/helper";
+import "../styles/base.css";
 ---
 
 <html lang="en">
@@ -33,44 +34,44 @@ import { convertDateRange } from "../utils/helper";
           <div>
             <a
               class="flex items-center space-x-1"
-              href={"mailto: " + profile.social.mail}
+              href={"mailto: " + profile.social?.mail}
             >
               <Icon name="mdi:email" />
-              <span>{profile.social.mail}</span>
+              <span>{profile.social?.mail}</span>
             </a>
           </div>
           <div>
-            <a href={"tel:" + profile.social.phone}>
+            <a href={"tel:" + profile.social?.phone}>
               <Icon name="mdi:phone" />
-              <span>{profile.social.phone}</span>
+              <span>{profile.social?.phone}</span>
             </a>
           </div>
           <div>
             <a
               href={"https://www.google.com/maps/place/" +
-                profile.social.location}
+                profile.social?.location}
               target="_blank"
             >
               <Icon name="mdi:location" />
-              <span>{profile.social.location}</span>
+              <span>{profile.social?.location}</span>
             </a>
           </div>
           <div>
-            <a href={"https://" + profile.social.website} target="_blank">
+            <a href={"https://" + profile.social?.website} target="_blank">
               <Icon name="mdi:web" />
-              <span>{profile.social.website}</span>
+              <span>{profile.social?.website}</span>
             </a>
           </div>
           <div>
-            <a href={"https://" + profile.social.linkedin} target="_blank">
+            <a href={"https://" + profile.social?.linkedin} target="_blank">
               <Icon name="mdi:linkedin" />
-              <span>{profile.social.linkedin}</span>
+              <span>{profile.social?.linkedin}</span>
             </a>
           </div>
           <div>
-            <a href={"https://" + profile.social.github} target="_blank">
+            <a href={"https://" + profile.social?.github} target="_blank">
               <Icon name="mdi:github" />
-              <span>{profile.social.github}</span>
+              <span>{profile.social?.github}</span>
             </a>
           </div>
         </div>
@@ -78,7 +79,7 @@ import { convertDateRange } from "../utils/helper";
       <section class="work-exp">
         <h2 class="title">Work Experience</h2>
         {
-          profile.workExperience.map((workExp) => {
+          profile.workExperience?.map((workExp) => {
             return (
               <div class="mb-2 last:mb-0">
                 <h4 class="text-lg font-bold before-line">
@@ -86,7 +87,7 @@ import { convertDateRange } from "../utils/helper";
                 </h4>
                 <h3 class="text-xl font-medium">{workExp.company}</h3>
                 <div class="text-sm italic text-gray-500">
-                  {convertDateRange(workExp.startDate, workExp.endDate)}
+                  {convertDateRange(workExp.startDate, workExp.endDate ?? null)}
                 </div>
                 <div class="text-sm italic text-gray-500">
                   Achievements/Tasks
@@ -110,7 +111,7 @@ import { convertDateRange } from "../utils/helper";
                 <h4 class="text-lg font-bold before-line">{educ.degree}</h4>
                 <h3 class="text-xl font-medium">{educ.institution}</h3>
                 <div class="text-sm italic text-gray-500 flex justify-between">
-                  <span>{convertDateRange(educ.startDate, educ.endDate)}</span>
+                  <span>{convertDateRange(educ.startDate, educ.endDate ?? null)}</span>
                   <span>{educ.grade}</span>
                 </div>
               </div>
@@ -169,7 +170,7 @@ import { convertDateRange } from "../utils/helper";
                     <h5 class="text-lg font-medium flex items-center">
                       {project.title}
                       <span class="ms-2 text-sm italic text-gray-500">
-                        ({convertDateRange(project.startDate, project.endDate)})
+                        ({convertDateRange(project.startDate, project.endDate ?? null)})
                       </span>
                     </h5>
 

@@ -26,7 +26,7 @@ const convertDateToMonYear = (dateStr: string, seperator: string = "-"): string 
     return `${monthNames[date.getMonth()]}${seperator}${year}`;
 }
 
-const convertDateRange = (startDate: string, endDate: string): string => {
+const convertDateRange = (startDate: string, endDate: string | null): string => {
     const start = convertDateToMonYear(startDate, " ");
     const end = endDate ? convertDateToMonYear(endDate, " ") : "Present";
 
