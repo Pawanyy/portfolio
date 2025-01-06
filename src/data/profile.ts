@@ -113,7 +113,11 @@ const profile: Profile = {
         {
             "category": "Tools & Platforms",
             "skills": [
-                { "name": "Git & Github" },
+                { "name": "Git" },
+                { "name": "Redis" },
+                { "name": "Rabbitmq" },
+                { "name": "PM2" },
+                { "name": "JDK/JRE" },
                 { "name": "Trello" }
             ]
         }
